@@ -1,0 +1,225 @@
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    *,
+    *::before,
+    *::after {
+    box-sizing: inherit;
+    }
+    html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    }
+    @media only screen and (max-width: 68.75em) {
+    html {
+    font-size: 50%;
+    }
+    }
+    body {
+    background-color:rgb(253, 74, 74);;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 15fr 10fr 15fr;
+    grid-template-rows: 1fr 7fr 1fr;
+    }
+    input[type=checkbox] + label .todos-list__li-icon-2 {
+    stroke-dasharray: 70;
+    stroke-dashoffset: 70;
+    }
+    input[type=checkbox] + label .todos-list__li-text-2 {
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    }
+    input[type=checkbox] + label .checked {
+    opacity: 1;
+    }
+    input[type=checkbox]:checked + label .todos-list__li-icon-2 {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s ease-in;
+    }
+    input[type=checkbox]:checked + label .todos-list__li-text-2 {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s ease-in;
+    }
+    .list {
+    transition: all 0.7s ease-in;
+    }
+    :root {
+        --color-grey-light-1: #faf9f9;
+        --color-grey-light-2: #f4f2f2;
+        --color-grey-light-3: #f0eeee;
+        --color-grey-light-4: #ccc;
+        --color-grey-dark-1: #333;
+        --color-grey-dark-2: #777;
+        --color-grey-dark-3: #999;
+        --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+        --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+        --line: 1px solid var(--color-grey-light-2);
+        }
+    .checked {
+    opacity: 0.7;
+    }
+    input[type=checkbox]:not(:checked) + label .todos-list__li-icon-2 {
+    stroke-dashoffset: 70;
+    transition: stroke-dashoffset 0.4s ease-out;
+    }
+    input[type=checkbox]:not(:checked) + label .todos-list__li-text-2 {
+    stroke-dashoffset: 360;
+    transition: stroke-dashoffset 0.4s ease-out;
+    }
+    .remove {
+    opacity: 0;
+    }
+    .checkbox {
+    display: none;
+    }
+    ul li {
+    list-style-type: none;
+    }
+    .todos {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-content: center;
+    min-height: 100vh;
+    grid-template-rows: 5rem 8rem auto;
+    }
+    .todos-head {
+    grid-row: 1/2;
+    grid-template-columns: 1fr 1fr;
+    font-size: 3.5rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.1));
+    }
+    .todos-head .header {
+    text-shadow: var(--shadow-dark);
+    }
+    .todos-head .fa {
+    margin-left: 2.5rem;
+    margin-top: 7px;
+    }
+    .todos-form {
+    width: 400px;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.todos-form-input {
+    width: 35rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    padding: 1.2rem;
+    background-color: whitesmoke;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+    .todos-form-button {
+     width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'poppins',sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: blue;
+    cursor: pointer;
+    }
+    .todos-list {
+    position: relative;
+    grid-row: 3/4;
+    }
+    .todos-list__li {
+    cursor: pointer;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.7rem;
+    border-radius: 2px;
+    box-shadow: var(--shadow-dark);
+    background-color: whitesmoke;
+    top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    }
+    .todos-list__li-icon {
+    position: absolute;
+    grid-column: 1/2;
+    }
+    .todos-list__li-icon-1 {
+    position: absolute;
+    margin-top: -1.2px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    }
+   
+    .todos-list__li-icon-2 {
+    margin-left: 0.8rem;
+    color: white
+    }
+    .todos-list__li-text {
+    border-radius: 5rem;
+    position: absolute;
+    grid-column: 2/3;
+    font-size: 2rem;
+    display: flex;
+    padding-left: 0.6rem;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: #424242;
+    }
+    .todos-list__li-text-1 {
+    position: absolute;
+    }
+    .todos-list__li-text-2 {
+    margin-top: 0.5rem;
+    margin-left: -1.2rem;
+    margin-right: 1rem;
+    }
+    .todos-list__li-delete-todo {
+    cursor: pointer;
+    position: absolute;
+    grid-column: 3/4;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    }
+    Footer
+    
+    
+
